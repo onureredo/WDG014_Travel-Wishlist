@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Wishlist</title>
+  </head>
+  <body>
+    <h1>My Travel Wishlist</h1>
+    <ul>
+      <% countries.forEach(country => { %>
+      <li><%= country.name %></li>
+      <%}); %>
+    </ul>
+
+    <form action="/api/countries" method="post">
+      <input type="text" name="name" placeholder="Country name" />
+      <input type="text" name="alpha2Code" placeholder="Alpha 2 Code" />
+      <input type="text" name="alpha3Code" placeholder="Alpha 3 Code" />
+      <input type="checkbox" name="visited" />
+      <button type="submit">Add Country</button>
+    </form>
+  </body>
+</html>
